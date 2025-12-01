@@ -57,12 +57,11 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           
-      # Since your next.config.ts already defines basePath and assetPrefix, 
-      # we use 'static' here instead of 'next' to avoid double-configuration.
+      # We rely on the static output from the 'Build and Export' step 
+      # and the configuration in next.config.ts, so we use the action without parameters 
+      # to prevent any potential conflicts or errors like the TypeError.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: static # Changed from 'next' to 'static'
           
       - name: Restore cache
         uses: actions/cache@v4
