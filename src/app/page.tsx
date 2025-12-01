@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, CheckCircle2, Hammer, Ruler, DoorOpen, LayoutGrid } from "lucide-react";
 
 // Base path for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === 'production' ? '/repo2' : '';
+const basePath = '/repo2';
 
 export default function Home() {
   const fadeInUp = {
