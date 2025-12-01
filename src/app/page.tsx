@@ -5,6 +5,9 @@ import ContactForm from "@/components/ContactForm";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, CheckCircle2, Hammer, Ruler, DoorOpen, LayoutGrid } from "lucide-react";
 
+// Base path for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === 'production' ? '/repo2' : '';
+
 export default function Home() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -48,7 +51,7 @@ export default function Home() {
         <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-zinc-900 px-4 py-24 text-center text-white md:py-32">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/work-1.jpg"
+              src={`${basePath}/images/work-1.jpg`}
               alt="Background"
               fill
               className="object-cover opacity-30 scale-105"
@@ -180,7 +183,7 @@ export default function Home() {
                   className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-800"
                 >
                   <Image
-                    src={`/images/work-${num}.jpg`}
+                    src={`${basePath}/images/work-${num}.jpg`}
                     alt={`Construction project ${num}`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
